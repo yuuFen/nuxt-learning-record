@@ -24,7 +24,11 @@ export default {
     };
   },
   // @nuxtjs/axios 将 $axios 注入了上下文
-  asyncData({$axios, error}) {
+  async asyncData({$axios, error}) {
+    // 在 beforeCreate 之前执行
+    // 所以不能使用 this 获取到组件实例
+    // 得到一个上下文对象参数
+    // 会和 data 合并，覆盖 data
     try {
       const {ok, goods} = await $axios.$get('/api/goods')
       // 首次：服务端输出；
