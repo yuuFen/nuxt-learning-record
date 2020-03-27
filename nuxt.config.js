@@ -1,5 +1,6 @@
 
 module.exports = {
+  // 模式为服务端渲染，如果要单页渲染，设置为 spa
   mode: 'universal',
   /*
   ** Headers of the page
@@ -25,6 +26,23 @@ module.exports = {
   css: [
     'element-ui/lib/theme-chalk/index.css'
   ],
+
+  // 可以在这里配置 router
+  router: {
+
+
+    // 扩展路由
+    extendRoutes (routes, resolve) {
+      console.log(routes);
+      // 增加一个路由 /foo，对应组件为 custom.vue
+      routes.push({
+        name: 'foo',
+        path: '/foo',
+        component: resolve(__dirname, 'pages/custom.vue')
+      })
+    } 
+  },
+
   /*
   ** Plugins to load before mounting the App
   */

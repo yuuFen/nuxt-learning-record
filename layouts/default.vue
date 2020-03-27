@@ -1,13 +1,17 @@
 <template>
   <div>
+    <nuxt-link to="/">首页</nuxt-link>
+    <!-- no-prefetch 取消预加载的默认行为 -->
+    <n-link to="/admin" no-prefetch>管理</n-link>
+    <NLink to="/cart">购物车</NLink>
     <nuxt />
   </div>
 </template>
 
 <style>
 html {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
